@@ -18,22 +18,24 @@ FOR /D %%I IN (%moddir%\*) DO (
 @ECHO ON
 
 START arma3server.exe -client ^
-	-connect=127.0.0.1 -port=2312 -password=cnto ^
+	-connect=127.0.0.1 -port=2302 -password=cnto ^
 	-profiles=profiles ^
 	-nosplash ^
+	-nologs ^
 	-world=empty ^
 	-mod=%mods%
 
 :restart
 
 START /W arma3server.exe ^
-	-port=2312 ^
+	-port=2302 ^
 	-config=server.cfg ^
 	-profiles=profiles -name=server ^
 	-nosplash ^
 	-world=empty ^
 	-filePatching ^
-	-mod=%mods%
+	-mod=%mods% ^
+	-serverMod=servermods_cnto\@ocap
 
 TIMEOUT /T 60 /NOBREAK > NUL
 
