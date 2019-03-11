@@ -1,0 +1,10 @@
+@ECHO OFF
+SETLOCAL ENABLEDELAYEDEXPANSION
+
+FOR /D %%d IN (*) DO (
+   SET "NAME=%%d"
+   SET "NEWNAME=!NAME: =_!"
+   IF NOT "!NAME!"=="!NEWNAME!" rename "!NAME!" "!NEWNAME!"
+)
+pause
+exit

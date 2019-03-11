@@ -1,0 +1,1 @@
+The game server only accepts mods that have no spaces in them. To fix this issue. Put the "ReplaceSpace.cmd" into the mod directory and run it. To revert these changes, run "ReplaceUnderscore.cmd".
